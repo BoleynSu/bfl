@@ -1,0 +1,26 @@
+Compile
+
+g++ main.cpp -DK={s in the paper = K * 32} -DD={d in the paper} -O3 -std=c++11 -o bfl
+
+Run
+
+./bfl {graph} {query}
+
+Graph File  Format
+The first line must be "graph_for_greach".
+
+The second line  contains V, the number of vertices of the graph.
+
+Then V lines follow.
+Each line describes edges from a certain vertex, u, to its successors, v_i, in the following format.
+u: v_1 v_2 ... v_deg+(u)#
+
+Query File Format
+Each line contains a query, Reach(u, v), in the following format.
+u v result
+If result is 0, then Reach(u, v) should be false;
+if result is 1, then Reach(u, v) should be true;
+otherwise result should be -1, which means the result it unknown.
+
+Please note vertices are numbered from 0 to V - 1, and the graph must be a DAG.
+
